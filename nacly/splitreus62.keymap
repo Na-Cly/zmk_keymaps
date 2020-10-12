@@ -67,7 +67,7 @@
 // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
 // |  CTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |                   |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-// | LCTL  | LGUI  | LALT |  GRAV |  | EQL | DEL | BKSP|  | RET | SPC  | LBKT |  RBKT  | LBKT | HOME  |   END |
+// | Prof Prev  | Prof Next  | Prof Sel 0 |  GRAV |  | EQL | DEL | BKSP|  | RET | SPC  | LBKT |  RBKT  | LBKT | HOME  |   Clear conneciton bond |
 			bindings = <
 &cp M_MUTE   &cp M_VOLD    &cp M_VOLU    &none    &none    &none                       &none   &none  &none  &none  &none  &none
 &none  &cp M_PREV     &cp M_PLAY   &cp M_NEXT     &none    &none                       &none   &none  &none  &none  &none  &none
