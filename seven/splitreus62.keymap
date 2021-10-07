@@ -10,14 +10,21 @@
 #define TWO 1
 #define THREE 2
 
-&lt {
-    tapping_term_ms = <165>;
-};
 
 / {
+	behaviors {
+		hm: behavior_lt_mo {
+			compatible = "zmk,behavior-hold-tap";
+			label = "lt_label";
+			#binding-cells = <2>;
+			tapping_term_ms = <205>;
+			bindings = <&mo>, <&kp>;
+			flavor = "tap-preferred";
+		};
+    };
 
 
-	keymap {
+keymap {
 
 		compatible = "zmk,keymap";
 
@@ -29,12 +36,12 @@
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |                   |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 // | LCTL  | LGUI  | LALT |  GRAV |  | EQL |  | DEL|  | RET | SPC  | LBKT |  RBKT  | LB | HOME  |   END |
 			bindings = <
-&kp ESC  &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC
+&kp ESC  &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS
 &kp TAB  &kp Q     &kp W     &kp E     &kp R     &kp T                        &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSLH
 &kp LGUI &kp A     &kp S     &kp D     &lt TWO F     &kp G                        &kp H     &lt THREE J    &kp K     &kp L     &kp SEMI  &kp SQT
 &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B                        &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
 &kp LCTRL  &kp MINUS  &kp LALT &kp GRAVE    &kp EQUAL  &kp SPACE                     &kp RET  &kp LBKT    &kp RBKT   &kp HOME  &kp END   &kp ESC
-                                                 &kp DEL                    &kp LGUI
+                                                 &kp BSPC                    &kp LGUI
 			>;
 		};
 
@@ -68,7 +75,7 @@
 &none &none     &none     &none     &none    &none                     &none   &trans &none  &none  &none  &none
 &none &none     &none     &none     &none     &none                    &none   &none  &none  &none  &none  &none
 &bt BT_PRV &bt BT_NXT  &bt BT_SEL 0 &none  &none  &none                                 &none   &none  &none  &none  &none  &bt BT_CLR
-                                                 &none                 &none
+                                                 &kp DEL                 &none
 			>;
 		};
 	
